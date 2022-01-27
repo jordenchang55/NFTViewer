@@ -2,7 +2,7 @@ import {Image, ImageBackground, StyleSheet, Text} from 'react-native';
 import React from 'react';
 
 const NFTCollectionHeader = ({collection}) => {
-  return (
+  return collection.collectionDict.bannerImageUrl ? (
     <>
       <ImageBackground
         style={styles.imageBackground}
@@ -16,7 +16,7 @@ const NFTCollectionHeader = ({collection}) => {
         {collection.collectionDict.description}
       </Text>
     </>
-  );
+  ) : null;
 };
 
 const styles = StyleSheet.create({
