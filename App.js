@@ -27,6 +27,9 @@ const App: () => Node = () => {
             <Stack.Screen
               name="NFTCollectionList"
               component={NFTCollectionListPage}
+              options={() => ({
+                title: 'NFT Collections',
+              })}
             />
             <Stack.Screen
               name="NFTCollection"
