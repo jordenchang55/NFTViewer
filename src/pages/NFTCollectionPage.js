@@ -31,6 +31,9 @@ const NFTCollectionPage = props => {
         collection={collection}
         nfts={props.nfts}
         refreshing={props.loading}
+        onItemSelected={item => {
+          props.navigation.navigate('NFTDetail', {nft: item});
+        }}
         onEndReached={() => {
           props.getNFTs(
             collection.collectionDict.name,

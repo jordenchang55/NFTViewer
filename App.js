@@ -14,6 +14,7 @@ import {Provider} from 'react-redux';
 import NFTCollectionListPage from './src/pages/NFTCollectionListPage';
 import store from './src/store';
 import NFTCollectionPage from './src/pages/NFTCollectionPage';
+import NFTDetailPage from './src/pages/NFTDetailPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,6 +33,13 @@ const App: () => Node = () => {
               component={NFTCollectionPage}
               options={({route}) => ({
                 title: route.params.collection.collectionDict.displayName,
+              })}
+            />
+            <Stack.Screen
+              name="NFTDetail"
+              component={NFTDetailPage}
+              options={({route}) => ({
+                title: route.params.nft.name,
               })}
             />
           </Stack.Navigator>
