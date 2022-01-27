@@ -13,6 +13,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Provider} from 'react-redux';
 import NFTCollectionListPage from './src/pages/NFTCollectionListPage';
 import store from './src/store';
+import NFTCollectionPage from './src/pages/NFTCollectionPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +26,13 @@ const App: () => Node = () => {
             <Stack.Screen
               name="NFTCollectionList"
               component={NFTCollectionListPage}
+            />
+            <Stack.Screen
+              name="NFTCollection"
+              component={NFTCollectionPage}
+              options={({route}) => ({
+                title: route.params.collection.collectionDict.displayName,
+              })}
             />
           </Stack.Navigator>
         </NavigationContainer>

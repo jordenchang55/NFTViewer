@@ -44,6 +44,11 @@ const NFTCollectionListPage = props => {
             );
           }
         }}
+        onItemSelected={item => {
+          props.navigation.navigate('NFTCollection', {
+            collection: item,
+          });
+        }}
       />
     </View>
   );
